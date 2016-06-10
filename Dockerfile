@@ -96,10 +96,15 @@ RUN set -e \
 		exit 1; \
 	fi
 
-# Add libs Itec to working properly
+# Add libs to Tomcat working properly with Itec application's 
 RUN wget https://www.dropbox.com/s/8cjechltzxm8qr3/Libs.zip?dl=0 && \
     unzip Libs.zip -d /usr/local/tomcat/lib && \
+	chmod 777 /usr/local/tomcat/lib && \
     rm -f Libs.zip
+	
+# Add context.xml and tomcat-users.xml to connect with Itec Database
+ADD context.xml /usr/local/tomcat/conf
+ADD tomcat-users.xml /usr/local/tomcat/conf
 
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
