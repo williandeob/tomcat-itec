@@ -85,7 +85,7 @@ RUN set -x \
 	&& apt-get purge -y --auto-remove $nativeBuildDeps \
 	&& rm -rf "$nativeBuildDir" \
 	&& rm bin/tomcat-native.tar.gz
-
+	
 # verify Tomcat Native is working properly
 RUN set -e \
 	&& nativeLines="$(catalina.sh configtest 2>&1)" \
@@ -95,6 +95,11 @@ RUN set -e \
 		echo >&2 "$nativeLines"; \
 		exit 1; \
 	fi
+
+# Add libs Itec to working properly
+RUN wget https://www.dropbox.com/s/8cjechltzxm8qr3/Libs.zip?dl=0 && \
+    unzip Libs.zip -d /usr/local/tomcat/lib && \
+    rm -f Libs.zip
 
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
