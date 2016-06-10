@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Context>                           
+
+	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+	<WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+	
+	<Resource name="jdbc/gestao"
+    auth="Container"
+    factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
+    driverClassName="net.sourceforge.jtds.jdbcx.JtdsDataSource"
+    type="javax.sql.DataSource"
+    maxActive="50"
+    maxIdle="10"
+    maxWait="15000"
+    username="sa"
+    password="itec261002/*"
+    url="jdbc:jtds:sqlserver://10.172.192.8/HomologacaoProducao;sendStringParametersAsUnicode=false"
+    removeAbandoned="true"
+    removeAbandonedTimeout="30"
+    logAbandoned="true" /> 
+	
+	<Resource name="jdbc/gestaoArquivos"
+    auth="Container"
+    factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
+    driverClassName="net.sourceforge.jtds.jdbcx.JtdsDataSource"
+    type="javax.sql.DataSource"
+    maxActive="50"
+    maxIdle="10"
+    maxWait="15000"
+    username="sa"
+    password="itec261002/*"
+    url="jdbc:jtds:sqlserver://10.172.192.8/HomologacaoArquivos;sendStringParametersAsUnicode=false"
+    removeAbandoned="true"
+    removeAbandonedTimeout="30"
+    logAbandoned="true" /> 
+	
+	<Resource name="jdbc/gestaoAnalise"
+    auth="Container"
+    factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
+    driverClassName="net.sourceforge.jtds.jdbcx.JtdsDataSource"
+    type="javax.sql.DataSource"
+    maxActive="50"
+    maxIdle="10"
+    maxWait="15000"
+    username="sa"
+    password="itec261002/*"
+    url="jdbc:jtds:sqlserver://10.172.192.8/HomologacaoAnalise;sendStringParametersAsUnicode=false"
+    removeAbandoned="true"
+    removeAbandonedTimeout="30"
+    logAbandoned="true" />
+
+	<ResourceLink name="jdbc/gestao"
+    global="jdbc/gestao"
+    type="javax.sql.DataSource" />
+
+    <ResourceLink name="jdbc/Arquivos"
+    global="jdbc/Arquivos"
+    type="javax.sql.DataSource" /> 
+	
+    <ResourceLink name="jdbc/Analise"
+    global="jdbc/Analise"
+    type="javax.sql.DataSource" />
+
+</Context>
