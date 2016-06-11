@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Context>                           
 
-	<WatchedResource>WEB-INF/web.xml</WatchedResource>
-	<WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+    <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
 	
-	<Resource name="jdbc/gestao"
+    <Resource name="jdbc/gestao"
     auth="Container"
     factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
     driverClassName="net.sourceforge.jtds.jdbcx.JtdsDataSource"
@@ -19,7 +19,7 @@
     removeAbandonedTimeout="30"
     logAbandoned="true" /> 
 	
-	<Resource name="jdbc/gestaoArquivos"
+    <Resource name="jdbc/gestaoArquivos"
     auth="Container"
     factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
     driverClassName="net.sourceforge.jtds.jdbcx.JtdsDataSource"
@@ -34,7 +34,7 @@
     removeAbandonedTimeout="30"
     logAbandoned="true" /> 
 	
-	<Resource name="jdbc/gestaoAnalise"
+    <Resource name="jdbc/gestaoAnalise"
     auth="Container"
     factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
     driverClassName="net.sourceforge.jtds.jdbcx.JtdsDataSource"
@@ -49,7 +49,7 @@
     removeAbandonedTimeout="30"
     logAbandoned="true" />
 
-	<ResourceLink name="jdbc/gestao"
+    <ResourceLink name="jdbc/gestao"
     global="jdbc/gestao"
     type="javax.sql.DataSource" />
 
