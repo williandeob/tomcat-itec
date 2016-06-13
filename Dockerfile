@@ -94,9 +94,11 @@ RUN wget https://www.dropbox.com/s/8cjechltzxm8qr3/Libs.zip && \
 	
 # Add context.xml and tomcat-users.xml to connect with Itec Database
 ADD context.xml /
-RUN mv -f context.xml  /usr/local/tomcat/conf
+RUN cp -f /context.xml  /usr/local/tomcat/conf && \
+    rm -f /context.xml
 ADD tomcat-users.xml /
-RUN mv -f tomcat-users.xml  /usr/local/tomcat/conf
+RUN cp -f tomcat-users.xml  /usr/local/tomcat/conf && \
+    rm -f /tomcat-users.xml
 
 # verify Tomcat Native is working properly
 RUN set -e \
