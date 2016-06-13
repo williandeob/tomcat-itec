@@ -7,7 +7,7 @@
 	
 	<Resource name="jdbc/gestao"
     auth="Container"
-    factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
+    factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
     driverClassName="net.sourceforge.jtds.jdbcx.JtdsDataSource"
     type="javax.sql.DataSource"
     maxActive="50"
@@ -22,7 +22,7 @@
 	
 	<Resource name="jdbc/gestaoArquivos"
     auth="Container"
-    factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
+    factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
     driverClassName="net.sourceforge.jtds.jdbcx.JtdsDataSource"
     type="javax.sql.DataSource"
     maxActive="50"
@@ -37,7 +37,7 @@
 	
 	<Resource name="jdbc/gestaoAnalise"
     auth="Container"
-    factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
+    factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
     driverClassName="net.sourceforge.jtds.jdbcx.JtdsDataSource"
     type="javax.sql.DataSource"
     maxActive="50"
