@@ -90,7 +90,8 @@ RUN set -x \
 RUN wget http://suporte2.itecgyn.com.br/dist/setup/jtds-1.2.8.jar
 RUN wget http://suporte2.itecgyn.com.br/dist/setup/postgresql-9.1-902.jdbc4.jar
 RUN mv jtds-1.2.8.jar /usr/local/tomcat/lib && \
-    mv postgresql-9.1-902.jdbc4.jar /usr/local/tomcat/lib
+    mv postgresql-9.1-902.jdbc4.jar /usr/local/tomcat/lib && \
+    chmod 777 -R /usr/local/tomcat/lib
 #RUN wget https://www.dropbox.com/s/8cjechltzxm8qr3/Libs.zip && \
 #    unzip Libs.zip -d /usr/local/tomcat/lib && \
 #    chmod 777 -R /usr/local/tomcat/lib && \
