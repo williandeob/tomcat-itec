@@ -87,14 +87,14 @@ RUN set -x \
 	&& rm bin/tomcat-native.tar.gz
 
 # Add libs to Tomcat working properly with Itec application's 
-RUN wget https://www.dropbox.com/s/8cjechltzxm8qr3/Libs.zip && \
-    unzip Libs.zip -d /usr/local/tomcat/lib && \
-    chmod 777 -R /usr/local/tomcat/lib && \
-    rm -f Libs.zip
+#RUN wget https://www.dropbox.com/s/8cjechltzxm8qr3/Libs.zip && \
+#    unzip Libs.zip -d /usr/local/tomcat/lib && \
+#    chmod 777 -R /usr/local/tomcat/lib && \
+#    rm -f Libs.zip
 	
 # Add context.xml and tomcat-users.xml to connect with Itec Database
-#ADD context.xml /usr/local/tomcat/conf
-#ADD tomcat-users.xml /usr/local/tomcat/conf
+ADD context.xml /usr/local/tomcat/conf
+ADD tomcat-users.xml /usr/local/tomcat/conf
 
 # verify Tomcat Native is working properly
 RUN set -e \
