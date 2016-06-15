@@ -100,7 +100,8 @@ RUN set -x \
 # Add context.xml and tomcat-users.xml to connect with Itec Database
 ADD context.xml /usr/local/tomcat/conf
 ADD tomcat-users.xml /usr/local/tomcat/conf
-ADD sqljdbc4.jar /usr/local/tomcat/lib
+#ADD sqljdbc4.jar /usr/local/tomcat/lib
+ADD jtds-1.3.1.jar /usr/local/tomcat/lib
 RUN chmod 777 -R /usr/local/tomcat/lib
 
 # verify Tomcat Native is working properly
