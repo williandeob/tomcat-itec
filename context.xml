@@ -19,7 +19,8 @@
     url="jdbc:jtds:sqlserver://10.172.192.8:1433/HomologacaoProducao;sendStringParametersAsUnicode=false;"
     removeAbandonedOnMaintenance="true"
     removeAbandonedTimeout="30"
-    logAbandoned="true" /> 
+    logAbandoned="true"
+	validationQuery="select 1" /> 
 	
 	<Resource name="jdbc/gestaoArquivos"
     auth="Container"
@@ -35,7 +36,8 @@
     url="jdbc:jtds:sqlserver://10.172.192.8:1433/HomologacaoArquivos;"
     removeAbandonedOnMaintenance="true"
     removeAbandonedTimeout="30"
-    logAbandoned="true" /> 
+    logAbandoned="true"
+	validationQuery="select 1" /> 
 	
 	<Resource name="jdbc/gestaoAnalise"
     auth="Container"
@@ -51,7 +53,8 @@
     url="jdbc:jtds:sqlserver://10.172.192.8:1433/HomologacaoAnalise;"
     removeAbandonedOnMaintenance="true"
     removeAbandonedTimeout="30"
-    logAbandoned="true" />
+    logAbandoned="true"
+	validationQuery="select 1" />
 
 	<ResourceLink name="jdbc/gestao"
     global="jdbc/gestao"
