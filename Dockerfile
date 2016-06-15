@@ -101,7 +101,7 @@ RUN set -x \
 ADD context.xml /usr/local/tomcat/conf
 ADD tomcat-users.xml /usr/local/tomcat/conf
 #ADD sqljdbc4.jar /usr/local/tomcat/lib
-ADD jtds-1.3.1.jar /usr/local/tomcat/lib
+ADD jtds-1.2.8.jar /usr/local/tomcat/lib
 RUN chmod 777 -R /usr/local/tomcat/lib
 
 # verify Tomcat Native is working properly
