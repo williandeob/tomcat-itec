@@ -85,14 +85,6 @@ RUN set -x \
 	&& apt-get purge -y --auto-remove $nativeBuildDeps \
 	&& rm -rf "$nativeBuildDir" \
 	&& rm bin/tomcat-native.tar.gz
-	
-# add context.xml and tomcat-users.xml to connect with Itec Database
-ADD context.xml /usr/local/tomcat/conf
-ADD web.xml /usr/local/tomcat/webapps/manager/WEB-INF
-ADD tomcat-users.xml /usr/local/tomcat/conf
-ADD jtds-1.2.8.jar /usr/local/tomcat/lib
-RUN chmod 777 -R /usr/local/tomcat/lib
-
 
 # verify Tomcat Native is working properly
 RUN set -e \
