@@ -106,7 +106,7 @@
 
 # OS specific support.  $var _must_ be set to either true or false.
 
-export "JAVA_OPTS= -Xms1024m -Xmx1024m -XX:NewSize=256m -XX:MaxNewSize=384m -XX:PermSize=256m -XX:MaxPermSize=384m"
+JAVA_OPTS=" -Xms1024m -Xmx1024m -XX:NewSize=256m -XX:MaxNewSize=384m -XX:PermSize=256m -XX:MaxPermSize=384m"
 
 cygwin=false
 darwin=false
