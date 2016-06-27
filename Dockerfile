@@ -88,9 +88,12 @@ RUN set -x \
 
 # add context.xml and tomcat-users.xml to connect with Itec Database
 ADD context.xml /usr/local/tomcat/conf
+ADD catalina.sh /usr/local/tomcat/bin
 ADD web.xml /usr/local/tomcat/webapps/manager/WEB-INF
 ADD tomcat-users.xml /usr/local/tomcat/conf
 ADD jtds-1.2.8.jar /usr/local/tomcat/lib
+ADD jsf-api-2.1.9.jar /usr/local/tomcat/lib
+ADD jsf-impl-2.1.9.jar /usr/local/tomcat/lib
 RUN chmod 777 -R /usr/local/tomcat/lib
 	
 # verify Tomcat Native is working properly
