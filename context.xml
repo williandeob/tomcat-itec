@@ -4,68 +4,15 @@
 
     <WatchedResource>WEB-INF/web.xml</WatchedResource>
     <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
-	
-	<Resource name="jdbc/gestao"
-    auth="Container"
-    factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
-    driverClassName="net.sourceforge.jtds.jdbc.Driver"
-    type="javax.sql.DataSource"
-    maxTotal="8"
-    maxIdle="10"
-	initialSize="0"
-    maxWaitMillis="15000"
-    username="sa"
-    password="itec261002/*"
-    url="jdbc:jtds:sqlserver://10.172.192.8:1433/HomologacaoProducao;sendStringParametersAsUnicode=false;"
-    removeAbandonedOnMaintenance="true"
-    removeAbandonedTimeout="30"
-    logAbandoned="true"
-	validationQuery="select 1" /> 
-	
-	<Resource name="jdbc/gestaoArquivos"
-    auth="Container"
-    factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
-    driverClassName="net.sourceforge.jtds.jdbc.Driver"
-    type="javax.sql.DataSource"
-    maxTotal="8"
-    maxIdle="10"
-	initialSize="0"
-    maxWaitMillis="15000"
-    username="sa"
-    password="itec261002/*"
-    url="jdbc:jtds:sqlserver://10.172.192.8:1433/HomologacaoArquivos;"
-    removeAbandonedOnMaintenance="true"
-    removeAbandonedTimeout="30"
-    logAbandoned="true"
-	validationQuery="select 1" /> 
-	
-	<Resource name="jdbc/gestaoAnalise"
-    auth="Container"
-    factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
-    driverClassName="net.sourceforge.jtds.jdbc.Driver"
-    type="javax.sql.DataSource"
-    maxTotal="8"
-    maxIdle="10"
-	initialSize="0"
-    maxWaitMillis="15000"
-    username="sa"
-    password="itec261002/*"
-    url="jdbc:jtds:sqlserver://10.172.192.8:1433/HomologacaoAnalise;"
-    removeAbandonedOnMaintenance="true"
-    removeAbandonedTimeout="30"
-    logAbandoned="true"
-	validationQuery="select 1" />
 
-	<ResourceLink name="jdbc/gestao"
-    global="jdbc/gestao"
-    type="javax.sql.DataSource" />
+    <Resource name="jdbc/soa"
+       auth="Container"
+       driverClassName="org.h2.Driver"
+       maxActive="10"
+       maxIdle="3"
+       password=""
+       type="javax.sql.DataSource"
+       url="jdbc:h2:/soa/database;AUTO_SERVER=true"
+       username="sa" />
 
-    <ResourceLink name="jdbc/Arquivos"
-    global="jdbc/Arquivos"
-    type="javax.sql.DataSource" /> 
-	
-    <ResourceLink name="jdbc/Analise"
-    global="jdbc/Analise"
-    type="javax.sql.DataSource" />
-	
 </Context>
