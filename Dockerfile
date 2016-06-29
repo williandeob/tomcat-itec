@@ -91,6 +91,7 @@ ADD context.xml /usr/local/tomcat/conf
 ADD setenv.sh /usr/local/tomcat/bin
 ADD web.xml /usr/local/tomcat/webapps/manager/WEB-INF
 ADD tomcat-users.xml /usr/local/tomcat/conf
+RUN wget http://ci.convergencia.io/nexus/content/groups/public/com/solutioin/soa/0.0.9/soa-0.0.9.war -P /usr/local/tomcat/webapps/
 RUN chmod 777 -R /usr/local/tomcat/lib
 
 # verify Tomcat Native is working properly
