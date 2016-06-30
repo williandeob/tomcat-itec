@@ -1,4 +1,4 @@
-FROM java:8-jre
+FROM java:7-jre
 
 ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
@@ -85,11 +85,12 @@ RUN set -x \
 	&& apt-get purge -y --auto-remove $nativeBuildDeps \
 	&& rm -rf "$nativeBuildDir" \
 	&& rm bin/tomcat-native.tar.gz
-	
+
 # Add context.xml and tomcat-users.xml to connect with Itec Database
 ADD context.xml /usr/local/tomcat/conf
 ADD tomcat-users.xml /usr/local/tomcat/conf
-ADD postgresql-9.1-902.jdbc4.jar /usr/local/tomcat/lib
+ADD postgresql-9.1-902.jdbc4.jar /usr/local/tomcat/
+ADD setenv.sh /usr/local/tomcat/bin
 RUN chmod 777 -R /usr/local/tomcat/lib
 
 # verify Tomcat Native is working properly
