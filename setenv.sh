@@ -32,3 +32,6 @@ export JAVA_OPTS="$JAVA_OPTS -XX:NewSize=256m -XX:MaxNewSize=512m"
 #   Warning!
 #  Decprecated in Java 8!!  replace -XX:MetaspaceSize  !!!
 export JAVA_OPTS="$JAVA_OPTS -XX:PermSize=256m -XX:MaxPermSize=512m"
+
+#Net Points
+export JAVA_OPTS="-Dspring.profiles.active=interfacepdv.netpoints"
