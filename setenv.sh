@@ -34,4 +34,4 @@ export JAVA_OPTS="$JAVA_OPTS -XX:NewSize=256m -XX:MaxNewSize=512m"
 export JAVA_OPTS="$JAVA_OPTS -XX:PermSize=256m -XX:MaxPermSize=512m"
 
 #Net Points
-export JAVA_OPTS="-Dspring.profiles.active=interfacepdv.netpoints"
+export JAVA_OPTS="$JAVA_OPTS -Dspring.profiles.active=interfacepdv.netpoints"
