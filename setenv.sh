@@ -8,7 +8,7 @@
 # The 64-bit version of the JDK support only the Server VM,
 # so in that case the option is implicit
 # ... so it's redundant to today's world but it make me feel good.
-export JAVA_OPTS="-server"
+export JAVA_OPTS="$JAVA_OPTS -server"
 
 # -Xms/Xmx
 #   Xms Sets the initial size of the Heap
@@ -24,14 +24,14 @@ export JAVA_OPTS="$JAVA_OPTS -Xms1024M -Xmx2048M"
 # Generation heap are copied to the Old Generation
 # See http://www.cubrid.org/blog/dev-platform/understanding-java-garbage-collection
 # https://redstack.wordpress.com/2011/01/06/visualising-garbage-collection-in-the-jvm/
-export JAVA_OPTS="$JAVA_OPTS -XX:NewSize=256m -XX:MaxNewSize=512m"
+export JAVA_OPTS="$JAVA_OPTS -XX:NewSize=64m -XX:MaxNewSize=128m"
 
 # -PermSize/MaxPermSize
 #  Store classes and interned character strings
 # http://stackoverflow.com/questions/12114174/what-does-xxmaxpermsize-do
 #   Warning!
 #  Decprecated in Java 8!!  replace -XX:MetaspaceSize  !!!
-export JAVA_OPTS="$JAVA_OPTS -XX:PermSize=256m -XX:MaxPermSize=512m"
+export JAVA_OPTS="$JAVA_OPTS -XX:PermSize=64m -XX:MaxPermSize=128m"
 
 #Net Points
 export JAVA_OPTS="$JAVA_OPTS -Dspring.profiles.active=interfacepdv.netpoints"
